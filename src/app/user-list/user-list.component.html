@@ -1,0 +1,23 @@
+
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>First-name</th>
+          <th>Last-name</th>
+          <th>Email-Id</th>
+          <th>Cin</th>
+          <th>Actions </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users | async">
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.emailId}}</td>
+          <td><button (click)="deleteUser(user.id)" class="btn btn-danger btn-delete">Delete</button>
+              <button (click)="userDetails(user.id)" class="btn btn-info btn-detail" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
